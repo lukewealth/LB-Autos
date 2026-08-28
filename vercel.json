@@ -3,7 +3,6 @@
   "version": 2,
   "buildCommand": null,
   "framework": null,
-  "public": true,
 
   "cleanUrls": true,
   "trailingSlash": false,

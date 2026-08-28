@@ -769,14 +769,15 @@ i.bi {
 
 /*** Footer ***/
 .footer {
-    background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .9)), url(../img/IMG-20250715-WA0073.jpg) center center no-repeat;
-    background-size: cover;
+    background: var(--lb-navy-900);
     position: relative;
     bottom: 0;
     left: 0;
     right: 0;
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
+    border: 0;
+    box-shadow: none;
 }
 
 .footer .btn.btn-social {
@@ -787,8 +788,8 @@ i.bi {
     align-items: center;
     justify-content: center;
     color: var(--light);
-    border: 1px solid #FFFFFF;
-    border-radius: 35px;
+    border: 0;
+    border-radius: 0;
     transition: .3s;
 }
 
@@ -824,7 +825,7 @@ i.bi {
 .footer .copyright {
     padding: 25px 0;
     font-size: 15px;
-    border-top: 1px solid rgba(256, 256, 256, .1);
+    border-top: 0;
 }
 
 .footer .copyright a {
@@ -834,7 +835,7 @@ i.bi {
 .copyright {
     margin-bottom: 0 !important;
     padding-bottom: 4px !important;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 0;
 }
 
 /* Remove any bottom margin from last section */
@@ -846,7 +847,7 @@ section:last-of-type {
 .footer .footer-menu a {
     margin-right: 15px;
     padding-right: 15px;
-    border-right: 1px solid rgba(255, 255, 255, .3);
+    border-right: 0;
 }
 
 .footer .footer-menu a:last-child {
@@ -2021,9 +2022,9 @@ textarea.form-control { min-height: 110px; resize: vertical; }
 .footer a { text-decoration: none; transition: color var(--lb-dur) var(--lb-ease); }
 .footer a:hover { color: var(--lb-warning) !important; }
 .footer .btn-outline-light {
-  border-color: rgba(255,255,255,0.25);
+  border: 0;
   width: 40px; height: 40px;
-  border-radius: 50% !important;
+  border-radius: 0 !important;
   padding: 0;
   display: inline-flex; align-items: center; justify-content: center;
   margin-right: 0.5rem;
@@ -2032,11 +2033,11 @@ textarea.form-control { min-height: 110px; resize: vertical; }
 .footer .btn-outline-light:hover {
   background: var(--lb-warning);
   color: var(--lb-navy);
-  border-color: var(--lb-warning);
+  border-color: transparent;
   transform: translateY(-2px);
 }
 .footer .footer-menu a { margin-left: 0.85rem; font-size: 0.9rem; }
-.footer .copyright { border-top: 1px solid rgba(255,255,255,0.08); padding: 1.25rem 0; margin-top: 2.5rem; font-size: 0.85rem; }
+.footer .copyright { border-top: 0; padding: 1.25rem 0; margin-top: 2.5rem; font-size: 0.85rem; }
 
 /* ==============================
    WhatsApp / Call floating CTA
