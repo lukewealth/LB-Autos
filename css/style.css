@@ -343,34 +343,43 @@ body {
 }
 
 .page-header {
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    position: relative;
     width: 100%;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
+    background: var(--lb-navy-900);
+}
+
+.page-header .page-header-img {
+    display: block;
+    width: 100%;
+    height: clamp(360px, 56vw, 620px);
+    object-fit: cover;
+    object-position: center;
 }
 
 .page-header-inner {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    padding: 120px 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: transparent;
+}
+
+.page-header-inner > .container {
+    text-align: center;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
 }
 
 .page-header-inner h1,
 .page-header-inner .breadcrumb {
-    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.65);
 }
 
-@media (min-width: 992px) {
-    .page-header {
-        min-height: 700px;
-    }
-    .page-header-inner {
-        padding: 160px 0;
-    }
+@media (max-width: 575.98px) {
+    .page-header .page-header-img { height: clamp(380px, 90vw, 520px); }
 }
 
 .breadcrumb-item + .breadcrumb-item::before {
@@ -2143,14 +2152,6 @@ textarea.form-control { min-height: 110px; resize: vertical; }
   object-position: center;
 }
 
-/* Subtle dark gradient under the caption only — for legibility */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 50%);
-  pointer-events: none;
-}
-
 .hero-caption {
   inset: 0;
   z-index: 2;
@@ -2162,7 +2163,11 @@ textarea.form-control { min-height: 110px; resize: vertical; }
   margin: 0 auto;
   padding: 0 clamp(1rem, 4vw, 3rem);
   text-align: left;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
 }
+
+.hero-caption-inner .display-4 { text-shadow: 0 2px 18px rgba(0, 0, 0, 0.65); }
+.hero-caption-inner p       { text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5); }
 
 .hero-eyebrow {
   display: inline-block;
