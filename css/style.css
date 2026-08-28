@@ -365,7 +365,12 @@ body {
 .page-header-inner {
     width: 100%;
     padding: 120px 0;
-    background: rgba(0, 0, 0, .7);
+    background: transparent;
+}
+
+.page-header-inner h1,
+.page-header-inner .breadcrumb {
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.6);
 }
 
 @media (min-width: 992px) {
@@ -2126,24 +2131,19 @@ textarea.form-control { min-height: 110px; resize: vertical; }
 }
 
 /* ==============================
-   Hero / Carousel — image contained inside
-   a centred transparent-blue panel
+   Hero / Carousel — full-bleed image,
+   no card, no panel, no overlay
    ============================== */
-.hero-wrap { background: var(--lb-bg-alt); }
+.hero-wrap { background: transparent; }
 
 .hero-stage {
   position: relative;
-  margin: 1.25rem auto clamp(1.5rem, 4vw, 3rem);
-  max-width: 1280px;
-  width: calc(100% - 2rem);
-  border-radius: var(--lb-radius-lg);
+  width: 100%;
+  margin: 0;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: var(--lb-shadow-lg);
-  background: linear-gradient(135deg, #0B2154 0%, #102a6b 100%);
-}
-
-@media (min-width: 768px) {
-  .hero-stage { width: calc(100% - 4rem); }
+  box-shadow: none;
+  background: transparent;
 }
 
 #header-carousel,
@@ -2167,15 +2167,12 @@ textarea.form-control { min-height: 110px; resize: vertical; }
   object-position: center;
 }
 
-/* Transparent blue gradient overlay — sits between the image and caption.
-   This is the "transparent blue" panel the user asked for: the image is
-   always rendered through it, never extends beyond. */
+/* Subtle dark gradient under the caption only — for legibility,
+   not a panel/container */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(115deg, rgba(11, 33, 84, 0.85) 0%, rgba(11, 33, 84, 0.55) 45%, rgba(11, 33, 84, 0.15) 100%),
-    linear-gradient(0deg, rgba(11, 33, 84, 0.35) 0%, rgba(11, 33, 84, 0) 60%);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 50%);
   pointer-events: none;
 }
 
@@ -2253,7 +2250,6 @@ textarea.form-control { min-height: 110px; resize: vertical; }
   #header-carousel,
   #header-carousel .carousel-inner,
   #header-carousel .carousel-item { height: clamp(380px, 90vw, 520px); }
-  .hero-stage { border-radius: var(--lb-radius); }
   #header-carousel .carousel-control-prev,
   #header-carousel .carousel-control-next { width: 44px; }
   #header-carousel .carousel-control-prev-icon,
