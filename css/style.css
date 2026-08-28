@@ -389,35 +389,242 @@ body {
     color: #FFFFFF !important;
 }
 
-/* FAQ  */
-/* #faq,
-#faq .accordion,
-#faq .accordion-header,
-#faq .accordion-button,
-#faq .accordion-body {
-  text-align: center !important;
-  justify-content: center !important;
-  align-items: center !important;
-} */
+/* ==============================
+   FAQ Section
+   ============================== */
+.faq-section {
+  background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+}
 
-/* Center FAQ accordion headers and buttons */
-#faq .accordion-header {
-  display: flex;
-  justify-content: center;
+.faq-eyebrow {
+  display: inline-flex;
   align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  background: rgba(255, 193, 7, 0.12);
+  color: #b88600;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.faq-title {
+  color: var(--primary, #0B2154);
+  letter-spacing: -0.01em;
+}
+
+.faq-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.faq-callout {
+  background: linear-gradient(135deg, #fff7d6 0%, #fff3b8 100%);
+  border: 1px solid rgba(255, 193, 7, 0.35);
+  border-radius: 18px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 8px 24px rgba(11, 33, 84, 0.06);
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.faq-callout__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ffc107;
+  color: #0B2154;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.faq-accordion {
+  max-width: 880px;
+}
+
+.faq-accordion .faq-item {
+  border: 1px solid rgba(11, 33, 84, 0.08);
+  border-radius: 14px !important;
+  overflow: hidden;
+  margin-bottom: 0.85rem;
+  background: #ffffff;
+  transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+}
+
+.faq-accordion .faq-item:hover {
+  box-shadow: 0 10px 30px rgba(11, 33, 84, 0.08);
+  border-color: rgba(255, 193, 7, 0.4);
+  transform: translateY(-1px);
+}
+
+.faq-accordion .accordion-header {
+  margin: 0;
+}
+
+.faq-button {
+  display: flex !important;
+  align-items: center;
+  gap: 0.9rem;
   width: 100%;
+  padding: 1.1rem 1.25rem !important;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--primary, #0B2154);
+  background: #ffffff;
+  text-align: left;
+  text-align: start;
+  border: 0;
+  border-radius: 14px !important;
+  min-height: 64px;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-#faq .accordion-button {
-  justify-content: center !important;
-  text-align: center !important;
-  width: 100%;
+.faq-button::after {
+  display: none !important;
 }
 
-#faq .accordion-body {
-  text-align: center;
+.faq-button:not(.collapsed) {
+  background: #fff7d6;
+  color: #0B2154;
+  box-shadow: none;
 }
 
+.faq-button:focus-visible {
+  outline: 3px solid rgba(255, 193, 7, 0.65);
+  outline-offset: 2px;
+}
+
+.faq-button__icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(255, 193, 7, 0.18);
+  color: #b88600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.faq-button:not(.collapsed) .faq-button__icon {
+  background: #ffc107;
+  color: #0B2154;
+  transform: rotate(-6deg) scale(1.04);
+}
+
+.faq-button__text {
+  flex: 1 1 auto;
+  line-height: 1.4;
+}
+
+.faq-button__chevron {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+  font-size: 0.9rem;
+  transition: transform 0.25s ease, color 0.2s ease;
+}
+
+.faq-button:not(.collapsed) .faq-button__chevron {
+  transform: rotate(180deg);
+  color: #0B2154;
+}
+
+.faq-body {
+  padding: 0 1.25rem 1.25rem 4.15rem !important;
+  color: #4a4a4a;
+  font-size: 0.98rem;
+  line-height: 1.65;
+  text-align: left;
+  text-align: start;
+}
+
+@media (max-width: 575.98px) {
+  .faq-button {
+    padding: 0.95rem 1rem !important;
+    font-size: 0.96rem;
+    gap: 0.7rem;
+    min-height: 60px;
+  }
+  .faq-button__icon {
+    width: 36px;
+    height: 36px;
+    font-size: 0.95rem;
+  }
+  .faq-body {
+    padding: 0 1rem 1.1rem 3.7rem !important;
+    font-size: 0.94rem;
+  }
+  .faq-callout {
+    padding: 0.85rem 1rem;
+  }
+  .faq-callout__icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+  .faq-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-accordion .faq-item,
+  .faq-button,
+  .faq-button__icon,
+  .faq-button__chevron {
+    transition: none !important;
+  }
+}
+
+/* ==============================
+   Global Icon & Touch Target Polish
+   ============================== */
+.btn,
+a,
+[role="button"] {
+  -webkit-tap-highlight-color: rgba(255, 193, 7, 0.25);
+}
+
+.btn-sm-square,
+.btn-square,
+.btn-lg-square,
+.btn.btn-sm-square {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.btn-sm-square i,
+.btn-square i,
+.btn-lg-square i {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+i.fa,
+i.fab,
+i.fas,
+i.far,
+i.bi {
+  display: inline-block;
+  line-height: 1;
+}
+
+@media (max-width: 575.98px) {
+  .fa-3x { font-size: 2.25em; }
+  .fa-2x { font-size: 1.5em; }
+}
 
 /*** Booking ***/
 .booking {

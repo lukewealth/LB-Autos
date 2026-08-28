@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $message = trim($_POST['message'] ?? '');
 
     if ($name && $email && $service && $date && $message) {
-        $to = 'info@ladybenzautomechanic.com';
+        $to = 'ladybenzautomechnic@gmail.com';
         $subject = "New Booking Request from $name";
         $body = "Name: $name\nEmail: $email\nService: $service\nDate: $date\nMessage:\n$message";
         $headers = "From: $email\r\nReply-To: $email\r\n";

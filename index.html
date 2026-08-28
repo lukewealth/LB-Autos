@@ -63,10 +63,10 @@
                     <small>08035516634 | 09078966026</small>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn btn-sm-square bg-white text-secondary me-1" href="https://facebook.com/ladybenzng"><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-sm-square bg-white text-secondary me-1" href="https://twitter.com/ladybenzng"><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-sm-square bg-white text-secondary me-1" href="https://linkedin.com/company/ladybenz"><i class="fab fa-linkedin-in"></i></a>
-                    <a class="btn btn-sm-square bg-white text-secondary me-0" href="https://instagram.com/ladybenzng"><i class="fab fa-instagram"></i></a>
+                    <a class="btn btn-sm-square bg-white text-secondary me-1" href="https://facebook.com/ladybenzng"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a class="btn btn-sm-square bg-white text-secondary me-1" href="https://twitter.com/ladybenzng"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a class="btn btn-sm-square bg-white text-secondary me-1" href="https://linkedin.com/company/ladybenz"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a class="btn btn-sm-square bg-white text-secondary me-0" href="https://instagram.com/ladybenzng"><i class="fab fa-instagram" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
@@ -653,106 +653,145 @@
 </section>
 <!-- Training Programmes Section End -->
 
- <!-- FAQ Section Start -->
-<section class="text-center py-5" id="faq" > 
-  <h3 class="text-warning text-center mb-4"><i class="fa fa-question-circle me-2"></i> Frequently Asked Questions</h3>
-  <div class="accordion" id="faqAccordion">
+  <!-- FAQ Section Start -->
+  <section class="faq-section py-5" id="faq">
+    <div class="container">
+      <div class="text-center mx-auto mb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 720px;">
+        <span class="faq-eyebrow d-inline-flex align-items-center justify-content-center mb-2">
+          <i class="fa fa-question-circle me-2" aria-hidden="true"></i>
+          <span>Need Help?</span>
+        </span>
+        <h2 class="faq-title display-5 fw-bold mb-3">Frequently Asked Questions</h2>
+        <p class="faq-subtitle text-muted mb-0">Quick answers about our Mercedes-Benz services, training programmes, bookings and payments.</p>
+      </div>
 
-    <div class="accordion-item justify-content-center text-center">
-      <h2 class="accordion-header" id="faq1">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-          <i class="text-center text-center fa fa-car me-2"></i> What Mercedes-Benz models do you service?
-        </button>
-      </h2>
-      <div id="collapse1" class=" text-center accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          We service all Mercedes-Benz models, including sedans, SUVs, coupes, trucks, and commercial vehicles.
+      <!-- Animated admintion callout -->
+      <div class="faq-callout d-flex align-items-center justify-content-between flex-wrap gap-3 wow fadeInUp" data-wow-delay="0.2s" role="note" aria-label="Booking reminder">
+        <div class="d-flex align-items-center">
+          <span class="faq-callout__icon d-inline-flex align-items-center justify-content-center" aria-hidden="true">
+            <i class="fa fa-headset"></i>
+          </span>
+          <div class="ms-3">
+            <strong class="d-block">Still have questions?</strong>
+            <span class="text-muted small">Our team is ready to help you choose the right service or training programme.</span>
+          </div>
         </div>
+        <a href="contact.html" class="btn btn-warning rounded-pill px-4 py-2 fw-semibold" aria-label="Contact Lady Benz support">
+          Contact Us <i class="fa fa-arrow-right ms-2" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <div class="accordion faq-accordion mx-auto mt-4" id="faqAccordion">
+
+        <div class="accordion-item faq-item wow fadeInUp" data-wow-delay="0.10s">
+          <h3 class="accordion-header" id="faq1">
+            <button class="accordion-button faq-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+              <span class="faq-button__icon" aria-hidden="true"><i class="fa fa-car"></i></span>
+              <span class="faq-button__text">What Mercedes-Benz models do you service?</span>
+              <span class="faq-button__chevron ms-auto" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+            </button>
+          </h3>
+          <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="faq1" data-bs-parent="#faqAccordion">
+            <div class="accordion-body faq-body">
+              We service all Mercedes-Benz models, including sedans, SUVs, coupes, trucks, and commercial vehicles. Each vehicle receives a full diagnostic assessment before any work begins.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item faq-item wow fadeInUp" data-wow-delay="0.18s">
+          <h3 class="accordion-header" id="faq2">
+            <button class="accordion-button collapsed faq-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+              <span class="faq-button__icon" aria-hidden="true"><i class="fa fa-tools"></i></span>
+              <span class="faq-button__text">Do you offer training for beginners?</span>
+              <span class="faq-button__chevron ms-auto" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+            </button>
+          </h3>
+          <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
+            <div class="accordion-body faq-body">
+              Yes. Our training programmes are designed for all skill levels — from absolute beginners to experienced technicians looking to specialise in Mercedes-Benz systems.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item faq-item wow fadeInUp" data-wow-delay="0.26s">
+          <h3 class="accordion-header" id="faq3">
+            <button class="accordion-button collapsed faq-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+              <span class="faq-button__icon" aria-hidden="true"><i class="fa fa-calendar-check"></i></span>
+              <span class="faq-button__text">How can I book a service appointment?</span>
+              <span class="faq-button__chevron ms-auto" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+            </button>
+          </h3>
+          <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
+            <div class="accordion-body faq-body">
+              You can book a service appointment via our website, by phone call, or through WhatsApp. We also accept walk-ins depending on technician availability.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item faq-item wow fadeInUp" data-wow-delay="0.34s">
+          <h3 class="accordion-header" id="faq4">
+            <button class="accordion-button collapsed faq-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+              <span class="faq-button__icon" aria-hidden="true"><i class="fa fa-cogs"></i></span>
+              <span class="faq-button__text">What kind of repairs and maintenance do you offer?</span>
+              <span class="faq-button__chevron ms-auto" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+            </button>
+          </h3>
+          <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
+            <div class="accordion-body faq-body">
+              We handle diagnostics, routine maintenance, engine repairs, transmission servicing, suspension, electrical work, and OEM software updates.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item faq-item wow fadeInUp" data-wow-delay="0.42s">
+          <h3 class="accordion-header" id="faq5">
+            <button class="accordion-button collapsed faq-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+              <span class="faq-button__icon" aria-hidden="true"><i class="fa fa-certificate"></i></span>
+              <span class="faq-button__text">Are your technicians certified?</span>
+              <span class="faq-button__chevron ms-auto" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+            </button>
+          </h3>
+          <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#faqAccordion">
+            <div class="accordion-body faq-body">
+              Yes. All our technicians are certified and trained to work specifically on Mercedes-Benz vehicles using OEM standards and approved tooling.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item faq-item wow fadeInUp" data-wow-delay="0.50s">
+          <h3 class="accordion-header" id="faq6">
+            <button class="accordion-button collapsed faq-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+              <span class="faq-button__icon" aria-hidden="true"><i class="fa fa-user-graduate"></i></span>
+              <span class="faq-button__text">Can I get certified after completing your training?</span>
+              <span class="faq-button__chevron ms-auto" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+            </button>
+          </h3>
+          <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="faq6" data-bs-parent="#faqAccordion">
+            <div class="accordion-body faq-body">
+              Yes. Upon completing our training programme, you will receive a certificate of completion. Top performers may also be recommended for Mercedes-Benz internship placements.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item faq-item wow fadeInUp" data-wow-delay="0.58s">
+          <h3 class="accordion-header" id="faq8">
+            <button class="accordion-button collapsed faq-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+              <span class="faq-button__icon" aria-hidden="true"><i class="fa fa-credit-card"></i></span>
+              <span class="faq-button__text">What payment methods do you accept?</span>
+              <span class="faq-button__chevron ms-auto" aria-hidden="true"><i class="fa fa-chevron-down"></i></span>
+            </button>
+          </h3>
+          <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="faq8" data-bs-parent="#faqAccordion">
+            <div class="accordion-body faq-body">
+              We accept cash, POS, bank transfers, and mobile money platforms. Online payments via our website are also available for bookings and training.
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-
-    <div class="accordion-item">
-      <h2 class="text-center accordion-header" id="faq2">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-          <i class="text-center fa fa-tools me-2"></i> Do you offer training for beginners?
-        </button>
-      </h2>
-      <div id="collapse2" class="text-center accordion-collapse collapse" aria-labelledby="faq2" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          Yes, our training programs are designed for all skill levels — from beginners to experienced professionals.
-        </div>
-      </div>
-    </div>
-
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="faq3">
-        <button class="text-center accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-          <i class="text-center fa fa-calendar-check me-2"></i> How can I book a service appointment?
-        </button>
-      </h2>
-      <div id="collapse3" class="text-center accordion-collapse collapse" aria-labelledby="faq3" data-bs-parent="#faqAccordion">
-        <div class="text-center accordion-body">
-          You can book a service appointment via our website, phone call, or WhatsApp. We also accept walk-ins depending on technician availability.
-        </div>
-      </div>
-    </div>
-
-    <div class="text-center accordion-item">
-      <h2 class="text-center accordion-header" id="faq4">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-          <i class="text-center fa fa-cogs me-2"></i> What kind of repairs and maintenance do you offer?
-        </button>
-      </h2>
-      <div id="collapse4" class="text-center accordion-collapse collapse" aria-labelledby="faq4" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          We handle diagnostics, routine maintenance, engine repairs, transmission servicing, suspension, electrical work, and software updates.
-        </div>
-      </div>
-    </div>
-
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="faq5">
-        <button class="text-center accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-          <i class="text-center fa fa-certificate me-2"></i> Are your technicians certified?
-        </button>
-      </h2>
-      <div id="collapse5" class="text-center accordion-collapse collapse" aria-labelledby="faq5" data-bs-parent="#faqAccordion">
-        <div class="text-center accordion-body">
-          Yes, all our technicians are certified and trained to work specifically on Mercedes-Benz vehicles using OEM standards.
-        </div>
-      </div>
-    </div>
-
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="faq6">
-        <button class="text-center accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
-          <i class="text-center fa fa-user-graduate me-2"></i> Can I get certified after completing your training?
-        </button>
-      </h2>
-      <div id="collapse6" class="text-center accordion-collapse collapse" aria-labelledby="faq6" data-bs-parent="#faqAccordion">
-        <div class=" text-center accordion-body">
-          Yes, upon completing our training program, you will receive a certificate of completion, and top performers may be recommended for Mercedes-Benz internship placements.
-        </div>
-      </div>
-    </div>
-
-    <div class="text-center accordion-item">
-      <h2 class="accordion-header" id="faq8">
-        <button class="text-center accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
-          <i class="text-center fa fa-credit-card me-2"></i> What payment methods do you accept?
-        </button>
-      </h2>
-      <div id="collapse8" class="text-center accordion-collapse collapse" aria-labelledby="faq8" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          We accept cash, POS, bank transfers, and mobile money platforms. Online payments via our website are also available for bookings and training.
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-<!-- FAQ Section End -->
-</section>
+  </section>
+  <!-- FAQ Section End -->
 
     <!-- Booking Start -->
     <div class="container-fluid bg-secondary booking my-5 wow fadeInUp" data-wow-delay="0.1s">
@@ -828,10 +867,10 @@
           <p><span class="material-icons me-2" aria-hidden="true">mail</span>ladybenzautomechnic@gmail.com</p>
           <p><span class="material-icons me-2" aria-hidden="true">language</span><a href="https://www.ladybenzautomechanic.com">www.ladybenzautomechanic.com</a></p>
           <div class="d-flex pt-2">
-            <a class="btn btn-outline-light btn-social rounded-circle me-2" href="https://twitter.com/ladybenzng" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a class="btn btn-outline-light btn-social rounded-circle me-2" href="https://facebook.com/ladybenzng" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a class="btn btn-outline-light btn-social rounded-circle me-2" href="https://instagram.com/ladybenzng" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a class="btn btn-outline-light btn-social rounded-circle" href="https://linkedin.com/company/ladybenz" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a class="btn btn-outline-light btn-social rounded-circle me-2" href="https://twitter.com/ladybenzng" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            <a class="btn btn-outline-light btn-social rounded-circle me-2" href="https://facebook.com/ladybenzng" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+            <a class="btn btn-outline-light btn-social rounded-circle me-2" href="https://instagram.com/ladybenzng" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a class="btn btn-outline-light btn-social rounded-circle" href="https://linkedin.com/company/ladybenz" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
           </div>
         </div>
         <div class="col-lg-3 col-md-6">
