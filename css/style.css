@@ -151,15 +151,6 @@ body {
 }
 
 
-.back-to-top {
-    position: fixed;
-    display: none;
-    right: 45px;
-    bottom: 45px;
-    z-index: 99;
-}
-
-
 /*** Spinner ***/
 #spinner {
     opacity: 0;
@@ -2075,18 +2066,6 @@ textarea.form-control { min-height: 110px; resize: vertical; }
   .lb-float-cta { right: 12px; bottom: 76px; }
   .lb-float-cta a { width: 48px; height: 48px; font-size: 1.2rem; }
 }
-
-/* ==============================
-   Back-to-top
-   ============================== */
-.back-to-top {
-  border-radius: 50% !important;
-  background: var(--lb-warning) !important;
-  color: var(--lb-navy) !important;
-  border: 0;
-  transition: background-color var(--lb-dur) var(--lb-ease), transform var(--lb-dur) var(--lb-ease), box-shadow var(--lb-dur) var(--lb-ease);
-}
-.back-to-top:hover { background: var(--lb-warning-dark) !important; transform: translateY(-3px); box-shadow: var(--lb-shadow); }
 
 /* ==============================
    Mobile-first responsive typography
