@@ -401,7 +401,7 @@ document.getElementById('bookingForm').addEventListener('submit', function(e) {
   status.innerHTML = '<div class="alert alert-info">Sending your booking request...</div>';
   submitBtn.disabled = true;
   
-  fetch('send-booking.php', {
+  fetch('/api/booking', {
     method: 'POST',
     body: new FormData(form)
   })
@@ -487,7 +487,7 @@ document.querySelector('input[name="preferred_date"]').min = new Date().toISOStr
                 }
                 var btn = nForm.querySelector('button[type="submit"]');
                 if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
-                fetch('send-newsletter.php', { method: 'POST', body: new FormData(nForm) })
+                fetch('/api/newsletter', { method: 'POST', body: new FormData(nForm) })
                     .then(function (r) { return r.json(); })
                     .then(function (j) {
                         if (j && j.success) { showNStatus('success', j.message || 'Thanks for subscribing!'); nForm.reset(); }

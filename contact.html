@@ -388,7 +388,7 @@
                 }
                 var btn = nForm.querySelector('button[type="submit"]');
                 if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
-                fetch('send-newsletter.php', { method: 'POST', body: new FormData(nForm) })
+                fetch('/api/newsletter', { method: 'POST', body: new FormData(nForm) })
                     .then(function (r) { return r.json(); })
                     .then(function (j) {
                         if (j && j.success) { showNStatus('success', j.message || 'Thanks for subscribing!'); nForm.reset(); }
@@ -447,7 +447,7 @@
 
                 var data = new FormData(form);
 
-                fetch('send-contact.php', { method: 'POST', body: data })
+                fetch('/api/contact', { method: 'POST', body: data })
                     .then(function (r) { return r.json(); })
                     .then(function (j) {
                         if (j && j.success) {

@@ -1,0 +1,24 @@
+# Vercel ignore — these files/dirs are not deployed to Vercel's CDN
+
+# PHP backends (replaced by api/*.js serverless functions)
+send-contact.php
+send-booking.php
+send-newsletter.php
+
+# Build artifacts
+css/bootstrap.min.css
+lib/
+node_modules/
+*.log
+
+# Dev tools
+.tools/
+.git/
+.env
+.env.*
+*.md
+!DEPLOY.md
+.vercelignore
+vercel.json
+package.json
+package-lock.json
