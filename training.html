@@ -52,68 +52,71 @@
         </div>
     </div>
     <!-- Spinner End -->
-     <!-- Topbar Start -->
-    <div class="container-fluid bg-light p-0">
-        <div class="row gx-0 d-none d-lg-flex">
+         <!-- Topbar -->
+    <div class="container-fluid topbar p-0">
+        <div class="row gx-0 d-none d-lg-flex align-items-center">
             <div class="col-lg-7 px-5 text-start">
                 <div class="h-100 d-inline-flex align-items-center py-3 me-4">
-                    <small class="fa fa-map-marker-alt text-secondary me-2"></small>
+                    <small class="fa fa-map-marker-alt me-2" aria-hidden="true"></small>
                     <small>Opposite Eko Akete, Lekki Epe Expressway, Awoyaya, Lagos, Nigeria.</small>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center py-3">
-                    <small class="far fa-clock text-secondary me-2"></small>
-                    <small>Mon - Fri : 09.00 AM - 09.00 PM</small>
+                    <small class="far fa-clock me-2" aria-hidden="true"></small>
+                    <small>MON &ndash; FRI: 09.00 AM &ndash; 06.00 PM</small>
                 </div>
             </div>
             <div class="col-lg-5 px-5 text-end">
                 <div class="h-100 d-inline-flex align-items-center py-3 me-4">
-                    <small class="fa fa-phone-alt text-secondary me-2"></small>
-                    <small>08035516634 | 09078966026</small>
+                    <small class="fa fa-phone-alt me-2" aria-hidden="true"></small>
+                    <small>
+                        <a href="tel:+2348035516634" class="text-decoration-none text-reset">08035516634</a>
+                        <span class="mx-1">|</span>
+                        <a href="tel:+2349078966026" class="text-decoration-none text-reset">09078966026</a>
+                    </small>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn btn-sm-square bg-white text-secondary me-1" href="https://facebook.com/ladybenzng"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
-                    <a class="btn btn-sm-square bg-white text-secondary me-1" href="https://twitter.com/ladybenzng"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                    <a class="btn btn-sm-square bg-white text-secondary me-1" href="https://linkedin.com/company/ladybenz"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
-                    <a class="btn btn-sm-square bg-white text-secondary me-0" href="https://instagram.com/ladybenzng"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a class="btn btn-sm-square me-" href="https://facebook.com/ladybenzautomechanic" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                    <a class="btn btn-sm-square me-1" href="https://twitter.com/ladybenzautomechanic" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                    <a class="btn btn-sm-square me-1" href="https://instagram.com/ladybenzautomechanic" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a class="btn btn-sm-square me-0" href="https://linkedin.com/company/ladybenzautomechanic" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Topbar End -->
 
 
-    <!-- Navbar Start -->
+
+        <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <img src="img/logo.png" alt="Lady Benz Logo" height="48" class="me-2"/>
-            <span class=" font-size-1  text-secondary fw-bold">Lady Benz Automechanic<sup>®</sup></span>
+            <span class="font-size-1 text-secondary fw-bold">Lady Benz Automechanic<sup>&reg;</sup></span>
         </a>
         <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-label="Toggle navigation" id="menuToggle">
             <span class="navbar-toggler-icon"></span>
-            <span class="close-icon d-none" style="font-size : 1.5rem;">&times;</span>
+            <span class="close-icon d-none" style="font-size: 1.5rem;">&times;</span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
-            <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
+            <div class="navbar-nav ms-auto p-4 p-lg-0 align-items-lg-center">
+                <a href="index.html" class="nav-item nav-link">Home</a>
                 <a href="about.html" class="nav-item nav-link">About</a>
                 <a href="service.html" class="nav-item nav-link">Services</a>
+                <a href="contact.html" class="nav-item nav-link">Contact</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">More</a>
                     <div class="dropdown-menu fade-up m-0">
                         <a href="booking.html" class="dropdown-item">Booking</a>
-                        <!-- <a href="team.html" class="dropdown-item">Technicians</a> -->
+                        <a href="team.html" class="dropdown-item">Technicians</a>
                         <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="#faq" class="dropdown-item">FAQ</a>
-                        <!-- <a href="training.html" class="dropdown-item">Training</a> -->
-                        <!-- <a href="gallery.html" class="dropdown-item"></a> -->
+                        <a href="index.html#faq" class="dropdown-item">FAQ</a>
+                        <a href="training.html" class="dropdown-item">Training</a>
                     </div>
                 </div>
-                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                <a href="booking.html" class="btn booking-btn ms-lg-3">Book a Session<i class="fa fa-arrow-right ms-2" aria-hidden="true"></i></a>
             </div>
-            <a href="booking.html" class="booking-btn">Book A Session<i class="fa fa-arrow-right ms-2"></i></a>
         </div>
     </nav>
-    <!-- Navbar End -->
+
 <body>
   <!-- Mercedes-Benz Carousel -->
   <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
@@ -155,98 +158,121 @@
     </button>
   </div>
 
-  <!-- Footer Contact -->
-  <footer class="footer bg-dark text-white py-4">
-    <div class="container text-center">
-      <p>&copy; 2025 Lady Benz Automechanic Ltd. All rights reserved.</p>
-      <p>Address: Opposite Eko Akete, Lekki Epe Expressway, Awoyaya, Lagos, Nigeria.</p>
-      <p>Email: ladybenzautomechnic@gmail.com | Phone: 08035516634 | 09078966026</p>
-      <p>Website: <a href="https://www.ladybenzautomechanic.com">www.ladybenzautomechanic.com</a></p>
-      <p>Follow us: <a href="#" class="text-info">Facebook</a> | <a href="#" class="text-info">Instagram</a></p>
+      <!-- Footer -->
+    <footer class="footer">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <h4 class="text-light mb-3">Lady Benz Automechanic Ltd</h4>
+                    <p class="mb-3">Nigeria's leading Mercedes-Benz service and training center. Certified diagnostics, OEM repairs, and the next generation of auto engineers.</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-2" aria-hidden="true"></i>Opposite Eko Akete, Lekki Epe Expressway, Awoyaya, Lagos, Nigeria.</p>
+                    <p class="mb-2">
+                        <i class="fa fa-phone-alt me-2" aria-hidden="true"></i>
+                        <a href="tel:+2348035516634">08035516634</a> &middot;
+                        <a href="tel:+2349078966026">09078966026</a>
+                    </p>
+                    <p class="mb-2"><i class="fa fa-envelope me-2" aria-hidden="true"></i><a href="mailto:ladybenzautomechnic@gmail.com">ladybenzautomechnic@gmail.com</a></p>
+                    <p class="mb-0"><i class="fa fa-globe me-2" aria-hidden="true"></i><a href="https://www.ladybenzautomechanic.com" target="_blank" rel="noopener">www.ladybenzautomechanic.com</a></p>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 class="text-light mb-3">Quick Links</h5>
+                    <a class="d-block mb-2" href="index.html">Home</a>
+                    <a class="d-block mb-2" href="about.html">About</a>
+                    <a class="d-block mb-2" href="service.html">Services</a>
+                    <a class="d-block mb-2" href="training.html">Training</a>
+                    <a class="d-block mb-2" href="contact.html">Contact</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-3">Business Hours</h5>
+                    <p class="mb-1"><strong>Monday &ndash; Friday:</strong> 09.00 AM &ndash; 06.00 PM</p>
+                    <p class="mb-1"><strong>Saturday:</strong> 09.00 AM &ndash; 02.00 PM</p>
+                    <p class="mb-3"><strong>Sunday:</strong> Closed</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light" href="https://facebook.com/ladybenzautomechanic" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a class="btn btn-outline-light" href="https://twitter.com/ladybenzautomechanic" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a class="btn btn-outline-light" href="https://instagram.com/ladybenzautomechanic" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a class="btn btn-outline-light" href="https://linkedin.com/company/ladybenzautomechanic" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-light mb-3">Newsletter</h5>
+                    <p class="mb-3">Subscribe for service tips, training updates, and special offers.</p>
+                    <form id="newsletterForm" class="position-relative mx-auto" style="max-width: 360px;" novalidate>
+                        <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="email" name="newsletter_email" placeholder="Your email" required aria-label="Email address">
+                        <button type="submit" class="btn btn-warning py-2 px-3 position-absolute top-0 end-0 mt-2 me-2">Subscribe</button>
+                    </form>
+                    <div id="newsletterStatus" class="alert-status mt-2" role="status" aria-live="polite" hidden></div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                        &copy; <span id="copyrightYear"></span>
+                        <a href="index.html" class="text-reset">Lady Benz Automechanic Ltd</a>. All Rights Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="index.html">Home</a>
+                            <a href="index.html#faq">FAQs</a>
+                            <a href="contact.html">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Call / WhatsApp CTA -->
+    <div class="lb-float-cta" aria-label="Quick contact options">
+        <a class="lb-float-call" href="tel:+2348035516634" aria-label="Call Lady Benz at 08035516634">
+            <i class="fa fa-phone-alt" aria-hidden="true"></i>
+        </a>
+        <a class="lb-float-wa" href="https://wa.me/2348035516634" target="_blank" rel="noopener" aria-label="Chat with Lady Benz on WhatsApp">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
     </div>
-  </footer>
+    <script>
+    (function () {
+        var y = document.getElementById('copyrightYear');
+        if (y) y.textContent = new Date().getFullYear();
+
+        // -------- Newsletter form (footer) --------
+        var nForm   = document.getElementById('newsletterForm');
+        var nStatus = document.getElementById('newsletterStatus');
+        function showNStatus(kind, msg) {
+            if (!nStatus) return;
+            nStatus.hidden = false;
+            nStatus.className = 'alert-status ' + kind;
+            var icon = kind === 'success' ? 'fa-check-circle' : 'fa-exclamation-triangle';
+            nStatus.innerHTML = '<i class="fa ' + icon + '" aria-hidden="true"></i><span>' + msg + '</span>';
+            setTimeout(function () { nStatus.hidden = true; }, 6000);
+        }
+        if (nForm) {
+            nForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+                var input = nForm.querySelector('input[name="newsletter_email"]');
+                if (!input || !input.value || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(input.value)) {
+                    showNStatus('error', 'Please enter a valid email address.');
+                    input && input.focus();
+                    return;
+                }
+                var btn = nForm.querySelector('button[type="submit"]');
+                if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+                fetch('send-newsletter.php', { method: 'POST', body: new FormData(nForm) })
+                    .then(function (r) { return r.json(); })
+                    .then(function (j) {
+                        if (j && j.success) { showNStatus('success', j.message || 'Thanks for subscribing!'); nForm.reset(); }
+                        else { showNStatus('error', (j && j.message) || 'We could not complete your subscription. Please try again.'); }
+                    })
+                    .catch(function () { showNStatus('error', 'Network error. Please try again later.'); })
+                    .finally(function () { if (btn) { btn.disabled = false; btn.textContent = 'Subscribe'; } });
+            });
+        }
+
+        if (window.WOW) new WOW().init();
+    })();
+    </script>
 </body>
 </html>
-
-<!-- about.html -->
-<section class="container py-5">
-  <h1 class="display-5 mb-4">About Lady Benz Automechanic Limited®</h1>
-  <p class="mb-4">
-    Lady Benz Automechanic Limited® (LBA) is Nigeria’s first female-led, Mercedes-Benz-specialized repair and training company. 
-    Founded by Engr. Joy Obi Amuche, the first certified female Mercedes-Benz specialist in the country, LBA delivers precision engineering services and empowers future mechanics through education and mentorship.
-  </p>
-  <p>
-    With nearly two decades of experience, Joy's journey from street hawker to certified engineer is an inspiration across Africa. Through international training and strategic partnerships—including DO×UN Women WEEAP—she has equipped hundreds of youths and women with world-class automotive skills.
-  </p>
-  <!-- Responsive images -->
-<picture>
-    <source srcset="img/founder-mobile.jpg" media="(max-width: 576px)">
-    <source srcset="img/founder-tablet.jpg" media="(max-width: 992px)">
-    <img src="img/founder.jpg" alt="Founder Joy Obi Amuche" 
-         class="img-fluid rounded my-4" 
-         loading="lazy"
-         width="800" 
-         height="600">
-</picture>
-  <p>
-    LBA is committed to delivering “education for living” and helping trainees build sustainable careers, while providing elite services for Mercedes-Benz owners across Nigeria.
-  </p>
-</section>
-
-<!-- service.html -->
-<section class="container py-5">
-  <h1 class="display-5 mb-4">Expert Mercedes-Benz Services</h1>
-  <p>
-    At Lady Benz Automechanic Limited®, we offer diagnostics, mechanical and electrical repairs, ECU programming, routine maintenance, body work, suspension, brake systems, and tire fitting—exclusively for Mercedes-Benz models. 
-  </p>
-  <p>
-    Our team is equipped with OEM tools and certified to deliver services at the same standards as international Benz service centers. We also provide general repairs for select vehicle brands for body work and tires.
-  </p>
-  <img src="img/training.jpg" alt="Workshop Services" class="img-fluid rounded my-4"/>
-</section>
-
-<!-- team.html -->
-<section class="container py-5">
-  <h1 class="display-5 mb-4">Our Founder & Mentors</h1>
-  <div class="row g-4">
-    <div class="col-lg-4 col-md-6">
-      <div class="team-item position-relative rounded overflow-hidden">
-        <img class="img-fluid w-100" src="img/founder.jpg" alt="Joy Obi Amuche">
-        <div class="team-text bg-light text-center p-4">
-          <h5>Engr. Joy Obi Amuche</h5>
-          <p class="text-primary">Founder & Mercedes-Benz Specialist</p>
-          <p>18+ years of elite Benz engineering experience. VP of Africa Women Auto-Mechanics. Trained in Nigeria and Germany. Passionate about youth empowerment and technical innovation.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- media.html (optional) -->
-<section class="container py-5">
-  <h1 class="display-5 mb-4">Media & Press Features</h1>
-  <div class="embed-responsive embed-responsive-16by9 mb-4">
-    <iframe class="embed-responsive-item w-100" style="height:400px" src="https://www.youtube.com/embed/bqF40KQEFNM" allowfullscreen></iframe>
-  </div>
-  <p>
-    Engr. Joy Obi Amuche has been featured in numerous national publications including Vanguard, Leading Ladies Africa, and recognized globally for her unique leadership in the automotive engineering space.
-  </p>
-</section>
-
-<!-- training.html -->
-<section class="container py-5">
-  <h1 class="display-5 mb-4">Our Training Programs</h1>
-  <p>
-    Lady Benz Automechanic Ltd offers intensive, hands-on training programs at foundation, intermediate, and senior levels.
-    Trainees receive both theoretical and practical knowledge, designed to make real, measurable impacts in the automotive repair industry.
-  </p>
-  <p>
-    Our training curriculum is tailored to equip youths, especially women, with competencies in Mercedes-Benz diagnostics, engine repairs, suspension, electrical systems, and ECU reprogramming.
-    Graduates are empowered to establish their own workshops and create jobs in their communities.
-  </p>
-  <img src="img/training-group.jpg" alt="Hands-on Training" class="img-fluid rounded my-4"/>
-  <p>
-    We collaborate with governmental and non-governmental organizations, global manufacturers, and local industry experts to deliver certified and recognized training.
-    Apply now to begin your journey with Nigeria’s most trusted female-led auto training center.
-  </p>
-</section>

@@ -1,12 +1,11 @@
 <?php
 /**
- * Lady Benz Automechanic — Booking form handler
- * Sends booking requests to the admin Gmail inbox via PHPMailer (SMTP)
- * when available, falling back to PHP mail() otherwise.
+ * Lady Benz Automechanic — Contact form handler
+ * Sends submissions to the admin Gmail inbox via PHPMailer (SMTP) when
+ * available, falling back to PHP mail() if PHPMailer is not installed.
  *
  * POST fields:
- *   name, email, phone, service, preferred_date, preferred_time, message
- *   website (honeypot, must be empty)
+ *   name, email, subject, message, website (honeypot, must be empty)
  *
  * Response: JSON { success: bool, message: string }
  */
@@ -21,27 +20,24 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
+// --- Honeypot anti-spam ---------------------------------------------------
 if (!empty($_POST['website'] ?? '')) {
-    echo json_encode(['success' => true, 'message' => 'Thanks! Your booking has been received.']);
+    // Silently succeed so bots don't retry, but no email is sent.
+    echo json_encode(['success' => true, 'message' => 'Thanks! Your message has been received.']);
     exit;
 }
 
-$name           = trim((string)($_POST['name']           ?? ''));
-$email          = trim((string)($_POST['email']          ?? ''));
-$phone          = trim((string)($_POST['phone']          ?? ''));
-$service        = trim((string)($_POST['service']        ?? ''));
-$preferredDate  = trim((string)($_POST['preferred_date'] ?? ($_POST['date'] ?? '')));
-$preferredTime  = trim((string)($_POST['preferred_time'] ?? ''));
-$message        = trim((string)($_POST['message']        ?? ''));
+// --- Read & validate inputs ----------------------------------------------
+$name    = trim((string)($_POST['name']    ?? ''));
+$email   = trim((string)($_POST['email']   ?? ''));
+$subject = trim((string)($_POST['subject'] ?? ''));
+$message = trim((string)($_POST['message'] ?? ''));
 
 $errors = [];
-if ($name === '' || mb_strlen($name) < 2)        $errors[] = 'Please enter your full name.';
+if ($name === '' || mb_strlen($name) < 2)            $errors[] = 'Please enter your full name.';
 if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) $errors[] = 'Please enter a valid email address.';
-if ($phone === '' || mb_strlen(preg_replace('/\D+/', '', $phone)) < 10) $errors[] = 'Please enter a valid phone number.';
-if ($service === '')                             $errors[] = 'Please choose a service.';
-if ($preferredDate === '')                       $errors[] = 'Please pick a preferred date.';
-if ($preferredTime === '')                       $errors[] = 'Please pick a preferred time.';
-if ($message === '' || mb_strlen($message) < 5)  $errors[] = 'Please describe your request.';
+if ($subject === '' || mb_strlen($subject) < 3)       $errors[] = 'Please enter a subject.';
+if ($message === '' || mb_strlen($message) < 10)     $errors[] = 'Please enter a message of at least 10 characters.';
 
 if (!empty($errors)) {
     http_response_code(422);
@@ -49,6 +45,7 @@ if (!empty($errors)) {
     exit;
 }
 
+// --- Compose email --------------------------------------------------------
 $adminEmail = 'ladybenzautomechnic@gmail.com';
 $siteName   = 'Lady Benz Automechanic Ltd';
 $siteUrl    = 'https://www.ladybenzautomechanic.com';
@@ -56,23 +53,20 @@ $ip         = $_SERVER['REMOTE_ADDR'] ?? 'unknown';
 $ua         = $_SERVER['HTTP_USER_AGENT'] ?? 'unknown';
 $timestamp  = date('Y-m-d H:i:s T');
 
-$emailSubject = sprintf('[%s] New booking: %s — %s', $siteName, $service, $name);
+$emailSubject = sprintf('[%s] New contact message: %s', $siteName, $subject);
 
-$body  = "You received a new booking request from the $siteName website.\r\n\r\n";
-$body .= "Name:           $name\r\n";
-$body .= "Email:          $email\r\n";
-$body .= "Phone:          $phone\r\n";
-$body .= "Service:        $service\r\n";
-$body .= "Preferred date: $preferredDate\r\n";
-$body .= "Preferred time: $preferredTime\r\n\r\n";
-$body .= "Customer notes:\r\n----------------------------------------\r\n";
+$body  = "You received a new contact form submission from the $siteName website.\r\n\r\n";
+$body .= "Name:    $name\r\n";
+$body .= "Email:   $email\r\n";
+$body .= "Subject: $subject\r\n\r\n";
+$body .= "Message:\r\n----------------------------------------\r\n";
 $body .= "$message\r\n----------------------------------------\r\n\r\n";
 $body .= "Sent:    $timestamp\r\n";
 $body .= "IP:      $ip\r\n";
 $body .= "Browser: $ua\r\n";
-$body .= "Page:    $siteUrl/booking.html\r\n";
+$body .= "Page:    $siteUrl/contact.html\r\n";
 
-$altBody = "New booking from $name <$email>\nPhone: $phone\nService: $service\nWhen: $preferredDate $preferredTime\n\n$message";
+$altBody = "New contact message from $name <$email>\nSubject: $subject\n\n$message\n\nSent $timestamp from $ip";
 
 $headers  = "From: $siteName <noreply@ladybenzautomechanic.com>\r\n";
 $headers .= "Reply-To: $name <$email>\r\n";
@@ -80,6 +74,7 @@ $headers .= "X-Mailer: PHP/" . PHP_VERSION . "\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 
+// --- Try PHPMailer via Composer first ------------------------------------
 $sent = false;
 $composerAutoload = __DIR__ . '/vendor/autoload.php';
 if (is_file($composerAutoload)) {
@@ -91,6 +86,8 @@ if (is_file($composerAutoload)) {
             $mail->Host       = 'smtp.gmail.com';
             $mail->SMTPAuth   = true;
             $mail->Username   = 'ladybenzautomechnic@gmail.com';
+            // Use a Google App Password here (NOT the account password).
+            // Set in environment so the source code never contains the secret.
             $mail->Password   = getenv('LB_GMAIL_APP_PASSWORD') ?: '';
             $mail->SMTPSecure = \PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port       = 587;
@@ -106,12 +103,13 @@ if (is_file($composerAutoload)) {
 
             $sent = $mail->send();
         } catch (\Throwable $e) {
-            error_log('[send-booking.php] PHPMailer failed: ' . $e->getMessage());
+            error_log('[send-contact.php] PHPMailer failed: ' . $e->getMessage());
             $sent = false;
         }
     }
 }
 
+// --- Fall back to PHP mail() ---------------------------------------------
 if (!$sent) {
     $sent = @mail($adminEmail, $emailSubject, $body, $headers);
 }
@@ -119,7 +117,7 @@ if (!$sent) {
 if ($sent) {
     echo json_encode([
         'success' => true,
-        'message' => 'Your booking request has been received. Our team will contact you within 24 hours to confirm your appointment.',
+        'message' => 'Thank you! Your message has been sent. We will get back to you within 24 hours.',
     ]);
     exit;
 }
@@ -127,5 +125,5 @@ if ($sent) {
 http_response_code(500);
 echo json_encode([
     'success' => false,
-    'message' => 'We could not submit your booking right now. Please call 08035516634 or 09078966026 to reach us directly.',
+    'message' => 'We could not send your message right now. Please call 08035516634 or 09078966026 to reach us directly.',
 ]);
