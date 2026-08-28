@@ -8,6 +8,18 @@
   "cleanUrls": true,
   "trailingSlash": false,
 
+  "rewrites": [
+    { "source": "/send-contact.php",    "destination": "/api/contact" },
+    { "source": "/send-booking.php",    "destination": "/api/booking" },
+    { "source": "/send-newsletter.php", "destination": "/api/newsletter" }
+  ],
+
+  "functions": {
+    "api/contact.js":    { "maxDuration": 10 },
+    "api/booking.js":    { "maxDuration": 10 },
+    "api/newsletter.js": { "maxDuration": 10 }
+  },
+
   "headers": [
     {
       "source": "/(.*)\\.(jpg|jpeg|png|gif|webp|avif|svg|woff2?|ttf|otf|eot|ico|css|js|map)",

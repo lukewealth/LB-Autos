@@ -1,24 +1,35 @@
-# Vercel ignore — these files/dirs are not deployed to Vercel's CDN
+# Vercel ignore — these files/dirs are NOT uploaded to Vercel's CDN
 
 # PHP backends (replaced by api/*.js serverless functions)
 send-contact.php
 send-booking.php
 send-newsletter.php
 
-# Build artifacts
-css/bootstrap.min.css
-lib/
+# Composer / PHP
+vendor/
+composer.json
+composer.lock
+
+# Dev / build artifacts
 node_modules/
 *.log
+.npm/
+.eslintcache
 
-# Dev tools
-.tools/
-.git/
+# Local env
 .env
 .env.*
-*.md
-!DEPLOY.md
-.vercelignore
-vercel.json
-package.json
-package-lock.json
+.env.local
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+.github/
